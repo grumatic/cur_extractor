@@ -1,7 +1,7 @@
 # CUR data extractor
 This project extract CUR data from S3 and separate CUR data by AWS account id.
-After then it upload to S3 bucket. 
-AWS account id will use to distinguish CUR data. 
+After then it upload to S3 bucket.
+AWS account id will use to distinguish CUR data.
 Created CUR data based on usage account id.
 
 Copyright (C) 2020 Grumatic
@@ -22,30 +22,29 @@ Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
 Boston, MA  02110-1301, USA.
 
 # Structure
-CUR Extractor/
-CUR Extractor/
-┣ apps/
-┃ ┣ Config/
-┃ ┃ ┣ Companies.json.sample
-┃ ┃ ┣ Config.py
-┃ ┃ ┣ S3Config.json.sample
-┃ ┃ ┣ __init__.py
-┃ ┃ ┗ logger.conf
-┃ ┣ Extractor/
-┃ ┃ ┣ Extractor.py
-┃ ┃ ┗ __init__.py
-┃ ┣ S3Handler/
-┃ ┃ ┣ S3Handler.py
-┃ ┃ ┗ __init__.py
-┃ ┣ Utils/
-┃ ┃ ┣ GZIPHandler.py
-┃ ┃ ┣ JsonReader.py
-┃ ┃ ┗ __init__.py
-┃ ┗ main.py
-┣ .gitignore
-┣ Pipfile
-┣ Pipfile.lock
-┣ README.md
+CUR Extractor/\
+┣ apps/\
+┃ ┣ Config/\
+┃ ┃ ┣ Companies.json.sample\
+┃ ┃ ┣ Config.py\
+┃ ┃ ┣ S3Config.json.sample\
+┃ ┃ ┣ __init__.py\
+┃ ┃ ┗ logger.conf\
+┃ ┣ Extractor/\
+┃ ┃ ┣ Extractor.py\
+┃ ┃ ┗ __init__.py\
+┃ ┣ S3Handler/\
+┃ ┃ ┣ S3Handler.py\
+┃ ┃ ┗ __init__.py\
+┃ ┣ Utils/\
+┃ ┃ ┣ GZIPHandler.py\
+┃ ┃ ┣ JsonReader.py\
+┃ ┃ ┗ __init__.py\
+┃ ┗ main.py\
+┣ .gitignore\
+┣ Pipfile\
+┣ Pipfile.lock\
+┣ README.md\
 ┗ __init__.py
 
 # Setting
@@ -66,6 +65,6 @@ CUR Extractor/
     * NEED_REMOVE_TEMP - Remove temp folder after extracted. Default is True
 
 # Run Service
-Run below command >>
+Run below command >>\
 export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/apps
 uvicorn --host 0.0.0.0 --port 80 --limit-concurrency 500 --workers 1 apps.main:scheduler --reload
