@@ -1,0 +1,28 @@
+{
+    "Companies":
+    [
+        {
+            "Name": "SAMPLE",
+            "AccountId": [
+                "123", 
+                "456", 
+                "789"
+            ],
+            "BucketName": "BUCKET_NAME_TO_STORE_CUR_DATA",
+            "AccessKey": "ACCESS_KEY_FOR_S3_ACCESS",
+            "SecretKey": "SECRET_KEY_FOR_S3_ACCESS"
+        },
+        {
+            "Name": "SAMPLE2",
+            "AccountId": [
+                "123",
+                "456",
+                "789"
+            ],
+            "BucketName": "BUCKET_NAME_TO_STORE_CUR_DATA",
+            "AccessKey": "ACCESS_KEY_FOR_S3_ACCESS",
+            "SecretKey": "SECRET_KEY_FOR_S3_ACCESS"
+        }
+
+    ]
+}

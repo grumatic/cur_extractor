@@ -1,0 +1,8 @@
+{
+    "BucketName": "BUCKET_NAME_TO_DOWNLOAD_CUR_DATA",
+    "AccessKey": "ACCESS_KEY_FOR_S3_ACCESS",
+    "SecretKey": "SECRET_KEY_FOR_S3_ACCESS",
+    "AccountId": "AWS_ACCOUNT_ID",
+    "ReportName": "REPORT_NAME",
+    "ReportPrefix": "REPORT_PREFIX"
+}

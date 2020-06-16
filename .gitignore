@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Visual studio config
+.vscode/
+
+# temp folder
+tmp/
+
+# ETC
+.DS_Store
+*/.DS_Store
