@@ -66,5 +66,7 @@ CUR Extractor/\
 
 # Run Service
 Run below command >>\
+```bash
 export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/apps
 uvicorn --host 0.0.0.0 --port 80 --limit-concurrency 500 --workers 1 apps.main:scheduler --reload
+```
