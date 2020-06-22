@@ -1,5 +1,5 @@
 # Consolidate CUR(Cost and Usage Report) data extractor
-This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it upload to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
+This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it uploads to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
 
 # Structure
 CUR Extractor/\
@@ -29,6 +29,7 @@ CUR Extractor/\
 
 # Configurations
 - Consolidate CUR data of payer account
+
     Setting for **Payer account (Consolidate account)** information - include S3 that has CUR data
     
     * Copy or Rename 'S3Config.json.sample' to 'S3Config.json'
@@ -36,6 +37,7 @@ CUR Extractor/\
     * Put **Payer account information**, **S3 information that has CUR data** with keys and **CUR report information**
 
 - Company Information (Linked account information)
+
     Setting for **linked account** information - include S3 to upload extracted CUR data
 
     * Copy or Rename 'Companies.json.sample' to 'Companies.json'
@@ -43,6 +45,7 @@ CUR Extractor/\
     * Put **Linked account information** and **S3 information to upload extracted CUR data** with keys under 'Companies'
 
 - Extractor Configuration
+
     Below variables in Config/Config.py can be set
 
     * RUNNING_INTERVAL - Interval to run extracte. Default is At minute 0 past every 12th hour.\
