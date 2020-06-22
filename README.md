@@ -1,4 +1,4 @@
-# consolidate CUR(Cost and Usage Report) data extractor
+# Consolidate CUR(Cost and Usage Report) data extractor
 This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it upload to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
 
 # Structure
