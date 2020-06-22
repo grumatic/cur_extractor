@@ -1,8 +1,5 @@
-# CUR data extractor
-This project extract CUR data from S3 and separate CUR data by AWS account id.
-After then it upload to S3 bucket.
-AWS account id will use to distinguish CUR data.
-Created CUR data based on usage account id.
+# consolidate CUR(Cost and Usage Report) data extractor
+This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it upload to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
 
 # Structure
 CUR Extractor/\
@@ -11,39 +8,43 @@ CUR Extractor/\
 ┃ ┃ ┣ Companies.json.sample\
 ┃ ┃ ┣ Config.py\
 ┃ ┃ ┣ S3Config.json.sample\
-┃ ┃ ┣ __init__.py\
+┃ ┃ ┣ \_\_init\_\_.py\
 ┃ ┃ ┗ logger.conf\
 ┃ ┣ Extractor/\
 ┃ ┃ ┣ Extractor.py\
-┃ ┃ ┗ __init__.py\
+┃ ┃ ┗ \_\_init\_\_.py\
 ┃ ┣ S3Handler/\
 ┃ ┃ ┣ S3Handler.py\
-┃ ┃ ┗ __init__.py\
+┃ ┃ ┗\_\_init\_\_.py\
 ┃ ┣ Utils/\
 ┃ ┃ ┣ GZIPHandler.py\
 ┃ ┃ ┣ JsonReader.py\
-┃ ┃ ┗ __init__.py\
+┃ ┃ ┗ \_\_init\_\_.py\
 ┃ ┗ main.py\
 ┣ .gitignore\
 ┣ Pipfile\
 ┣ Pipfile.lock\
 ┣ README.md\
-┗ __init__.py
+┗ \_\_init\_\_.py
 
-# Setting
-- CUR data
-    Setting for **Payer account (Consolidate Account)** information - include S3 that has CUR data
-    1. Copy or Rename 'S3Config.json.sample' to 'S3Config.json'
-    2. Open 'S3Config.json'
-    3. Put **Payer account information**, **S3 information that has CUR data** with keys and **CUR report information**
+# Configurations
+- Consolidate CUR data of payer account
+    Setting for **Payer account (Consolidate account)** information - include S3 that has CUR data
+    
+    * Copy or Rename 'S3Config.json.sample' to 'S3Config.json'
+    * Open 'S3Config.json'
+    * Put **Payer account information**, **S3 information that has CUR data** with keys and **CUR report information**
 
-- Company Information
-    Setting for **Linked account** information - include S3 to upload extracted CUR data
-    1. Copy or Rename 'Companies.json.sample' to 'Companies.json'
-    2. Open 'Companies.json'
-    3. Put **Linked account information** and **S3 information to upload extracted CUR data** with keys under 'Companies'
+- Company Information (Linked account information)
+    Setting for **linked account** information - include S3 to upload extracted CUR data
 
-- Config
+    * Copy or Rename 'Companies.json.sample' to 'Companies.json'
+    * Open 'Companies.json'
+    * Put **Linked account information** and **S3 information to upload extracted CUR data** with keys under 'Companies'
+
+- Extractor Configuration
+    Below variables in Config/Config.py can be set
+
     * RUNNING_INTERVAL - Interval to run extracte. Default is At minute 0 past every 12th hour.\
     This configure follow **cron schedule expressions**. 
     * DOWNLOAD_PATH - Path for CUR data download. Default is './tmp'
@@ -51,7 +52,7 @@ CUR Extractor/\
     * NEED_REMOVE_TEMP - Remove temp folder after extracted. Default is True
 
 # Run Service
-1. Using **pipenv**. Refer below link to install pipenv.
+1. Using **pipenv**. Refer below link to install `pipenv`.
     - https://github.com/pypa/pipenv
 
 2. Git clone the source code
