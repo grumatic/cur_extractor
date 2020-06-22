@@ -1,5 +1,5 @@
 # Consolidate CUR(Cost and Usage Report) data extractor
-This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it uploads to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
+This project extracts CUR data from S3 and split CUR data by linked AWS account id. After then it uploads extracted data to linked account's S3 bucket. AWS account id will use to distinguish CUR data and S3 bucket location. 
 
 # Structure
 CUR Extractor/\
@@ -28,30 +28,25 @@ CUR Extractor/\
 ┗ \_\_init\_\_.py
 
 # Configurations
-- Consolidate CUR data of payer account
 
-    Setting for **Payer account (Consolidate account)** information - include S3 that has CUR data
+- Consolidate CUR data of payer account: Confiugration for **Payer account (Consolidate account)** S3 information that CUR data is stored.
     
     * Copy or Rename 'S3Config.json.sample' to 'S3Config.json'
     * Open 'S3Config.json'
-    * Put **Payer account information**, **S3 information that has CUR data** with keys and **CUR report information**
+    * Put **Payer account information**, **S3 information that CUR data is stored** with keys and **CUR report information**
 
-- Company Information (Linked account information)
-
-    Setting for **linked account** information - include S3 to upload extracted CUR data
+- Company Information (Linked account information): Configuration for **linked account** S3 information to upload extracted CUR data
 
     * Copy or Rename 'Companies.json.sample' to 'Companies.json'
     * Open 'Companies.json'
-    * Put **Linked account information** and **S3 information to upload extracted CUR data** with keys under 'Companies'
+    * Put **Linked account information** and **S3 information to upload extracted CUR data** with keys under 'Companies' field.
 
-- Extractor Configuration
+- Extractor Configuration: Configuration variables in Config/Config.py
 
-    Below variables in Config/Config.py can be set
-
-    * RUNNING_INTERVAL - Interval to run extracte. Default is At minute 0 past every 12th hour.\
-    This configure follow **cron schedule expressions**. 
-    * DOWNLOAD_PATH - Path for CUR data download. Default is './tmp'
-    * RESULT_PATH - Path for extracted files. It include .gz files. **Need to write without '/'**. Default is 'result'
+    * RUNNING_INTERVAL - Interval to run extractor. Default is every 12 hours per day (Default is 0:00 and 12:00).\
+    This configure follows **cron schedule expressions**. 
+    * DOWNLOAD_PATH - Extractor path for CUR data download. Default is './tmp'
+    * RESULT_PATH - Extractor path for extracted files. It includes .gz files. **It requires only folder name without '/'** . Default is 'result'
     * NEED_REMOVE_TEMP - Remove temp folder after extracted. Default is True
 
 # Run Service
