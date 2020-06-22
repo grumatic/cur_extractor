@@ -1,6 +1,5 @@
 # Interval to run extracte
-# RUNNING_INTERVAL = '0 */12 * * *'
-RUNNING_INTERVAL = '*/10 * * * *'
+RUNNING_INTERVAL = '0 */12 * * *'
 # Path for CUR data download
 DOWNLOAD_PATH = './tmp'
 # Path for extracted csv and gzip
